@@ -23,7 +23,15 @@ Route::resource('products', ProductController::class);
 
 Route::get('/migrate', function () {
     \Artisan::call(
-        'migrate:fresh --seed'
+        'migrate:refresh'
+        ,
+        [
+            '--force' => true
+        ]
+    );
+
+    \Artisan::call(
+        'db:seed'
         ,
         [
             '--force' => true
