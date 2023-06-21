@@ -21,7 +21,13 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 
-Route::get('/migrate', function(){
-    \Artisan::call('migrate');
+Route::get('/migrate', function () {
+    \Artisan::call(
+        'migrate'
+        ,
+        [
+            '--force' => true
+        ]
+    );
     dd('migrated!');
 });
