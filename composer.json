@@ -45,9 +45,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "run-migrations":["@php artisan migrate --seed"]
-    },
+        ]    },
     "extra": {
         "laravel": {
             "dont-discover": []
