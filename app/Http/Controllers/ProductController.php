@@ -12,7 +12,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        //showing list of products
+        $products = Product::latest()->paginate(5);
+
+        return view('products.index', compact('products'))->with(request()->input('page'));
     }
 
     /**
@@ -20,7 +23,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -28,7 +31,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the input parameters
+        $request-> validate([
+            'name' => 'required',
+            'detail'=> 'required'
+        ]);
+        //create a new product in the db
+
+        Product::create($request->all());
+
+        //redirect user and sent message of success
+        return redirect()->route('products.index')->with('success', 'product created successfully');
     }
 
     /**
@@ -36,7 +49,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -44,7 +57,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -52,7 +65,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+         // validate the input parameters
+         $request-> validate([
+            'name' => 'required',
+            'detail'=> 'required'
+        ]);
+        //update the passed in product in the db
+
+        $product->update($request->all());
+
+        //redirect user and sent message of success
+        return redirect()->route('products.index')->with('success', 'product updated successfully');
     }
 
     /**
@@ -60,6 +83,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // delete the product from storage
+        $product->delete();
+
+        // redirect the user & display success message
+        return redirect()->route('products.index')->with('success', 'product deleted successfully');
+
     }
 }
