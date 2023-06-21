@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
-// Route::get('/run-migration', function () {
 
-//     $sql = "CREATE DATABASE myDB";
-//     Artisan::call('migrate:refresh --seed');
-
-
-// });
+Route::get('/migrate', function(){
+    \Artisan::call('migrate');
+    dd('migrated!');
+});
