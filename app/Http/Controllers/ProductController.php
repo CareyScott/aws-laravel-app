@@ -87,7 +87,7 @@ class ProductController extends Controller
         $product->delete();
 
         // redirect the user & display success message
-        return redirect()->route('Products.index')->with('success', 'product deleted successfully');
+        return redirect()->route('products.index')->with('success', 'product deleted successfully');
 
     }
 }
