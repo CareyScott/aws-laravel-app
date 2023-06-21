@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +19,8 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
-
-
-// Artisan::call('optimze:clear');
-// Artisan::call('migrate:refresh --seed');
-
-// return "Migrations executed successfully";
+Route::get('/run-migration', function () {
+    Artisan::call('optimze:clear');
+    Artisan::call('migrate:refresh --seed');
+    return "Migrations executed successfully";
+});
