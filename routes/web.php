@@ -19,8 +19,10 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
-Route::get('/run-migration', function () {
-    // Artisan::call('optimze:clear');
-    Artisan::call('migrate:refresh --seed');
-    return "Migrations executed successfully";
-});
+// Route::get('/run-migration', function () {
+
+//     $sql = "CREATE DATABASE myDB";
+//     Artisan::call('migrate:refresh --seed');
+
+
+// });
