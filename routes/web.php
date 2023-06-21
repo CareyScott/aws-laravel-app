@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::resource('products', ProductController::class);
 
 
-Artisan::call('optimze:clear');
-Artisan::call('migrate:refresh --seed');
+// Artisan::call('optimze:clear');
+// Artisan::call('migrate:refresh --seed');
 
-return "Migrations executed successfully";
+// return "Migrations executed successfully";
