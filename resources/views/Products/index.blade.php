@@ -7,7 +7,7 @@
                 <h2>Laravel Development</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('Products.create') }}"> Create new Product</a>
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Create new Product</a>
             </div>
         </div>
     </div>
