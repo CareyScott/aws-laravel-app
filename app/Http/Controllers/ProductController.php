@@ -75,7 +75,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         //redirect user and sent message of success
-        return redirect()->route('Products.index')->with('success', 'product updated successfully');
+        return redirect()->route('products.index')->with('success', 'product updated successfully');
     }
 
     /**
