@@ -46,7 +46,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('RDS_HOST', 'awseb-e-andrmffimk-stack-awsebrdsdatabase-gdtufynrmud0.cihtiiliqkx3.eu-west-1.rds.amazonaws.com'),
+            'host' => env('RDS_HOST', 'productsdblaravel.cihtiiliqkx3.eu-west-1.rds.amazonaws.com'),
             'port' => env('RDS_PORT', '3306'),
             'database' => env('RDS_DB_NAME', 'ebdb'),
             'username' => env('RDS_USERNAME', 'root'),
@@ -62,7 +62,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
