@@ -46,7 +46,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('RDS_HOST', 'awseb-e-id5g7jvrmj-stack-awsebrdsdatabase-0lmzuyqrv0os'),
+            'host' => env('RDS_HOST', 'awseb-e-andrmffimk-stack-awsebrdsdatabase-gdtufynrmud0.cihtiiliqkx3.eu-west-1.rds.amazonaws.com'),
             'port' => env('RDS_PORT', '3306'),
             'database' => env('RDS_DB_NAME', 'ebdb'),
             'username' => env('RDS_USERNAME', 'root'),
